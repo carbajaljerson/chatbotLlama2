@@ -1,0 +1,7 @@
+channels
+ctransformers
+Django
+langchain
+pinecone-client
+sentence-transformers
+pypdf

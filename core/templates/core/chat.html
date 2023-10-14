@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% block title%} GGML Llama-2 | {% endblock %}
+
+{% block content %}
+
+{% include "core/sidebar.html" %}
+
+<div class="chat-container lg:w-2/4 mx-4 lg:mx-auto p-4 ">
+  <div class="query-container">
+
+<div>
+
+<h1 class="text-3xl lg:text-4xl text-white">Bienvenido a tu asistente Llama-2 en Django</h1>
+<p>Coloca tu pregunta en la caja de texto, tu respuesta sera provista despues de un rato ten paciencia</p>
+<br>
+Ten en cuanta que una consulta puede demorar más que otra
+<br>
+<br>
+
+<div>
+  
+  <form method="get" action="{% url 'ggml' %}">
+  <div class="flex">
+    <input type="text" id= "user-input" class="form-control flex-1 mr-3" placeholder="Escribe tu pregunta aqui..." type="search" name="query">
+    <button type="submit" class="btn right-0 px-5 py-3 rounded-xl text-white bg-teal-600 hover:bg-teal-700">Send</button>
+  </div>
+  </form>
+    <p class="text-lg">Tu respuesta es: <br><span>{{query}}</span></p>
+
+    <div class="output" id="output-location" >
+        {{output}}
+    </div>
+
+</div>  
+
+{% endblock %}
